@@ -1,0 +1,74 @@
+models:
+    School:
+      id: id
+      short_name: nullable string:255
+      name: nullable  string:255
+      created_date: nullable timestamp
+      created_by: nullable timestamp
+      last_modified_date: nullable timestamp
+      modified_by: nullable timestamp
+      deleted_at: nullable  timestamp
+    Classer:
+      id: id
+      name: string:255
+      school_id: id foreign:schools nullable 
+      grade_id: id foreign:grades nullable 
+      start_date: nullable timestamp
+      end_date: nullable timestamp
+      created_date: nullable timestamp
+      created_by: nullable timestamp
+      last_modified_date: nullable timestamp
+      modified_by: nullable timestamp
+      deleted_at: nullable  timestamp 
+    Grade:
+      id: id
+      name: string:255
+      previous_grade_id: id foreign:grades
+      next_grade_id: id foreign:grades
+      created_date: nullable timestamp
+      created_by: nullable timestamp
+      last_modified_date: nullable timestamp
+      modified_by: nullable timestamp
+      deleted_at: nullable  timestamp
+    StudentParent:
+      id: id
+      first_name: string:255
+      last_name: string:255
+      user_id: id foreign:users
+      created_date: nullable timestamp
+      created_by: nullable timestamp
+      last_modified_date: nullable timestamp
+      modified_by: nullable timestamp
+      deleted_at: nullable  timestamp
+    ScheduleClasser:
+      id: id 
+      user_id: id foreign:users
+      Classer_id: id foreign:Classers
+      enrollment_date: nullable timestamp
+      withdrawl_date: nullable timestamp
+      withdrawl_id: nullable integer
+      created_date: nullable timestamp
+      created_by: nullable timestamp
+      last_modified_date: nullable timestamp
+      modified_by: nullable timestamp
+      deleted_at: nullable  timestamp
+    ScheduleTeacher:
+      id: id
+      classer_id: id foreign:classers
+      user_id: id foreign:users
+      start_date: nullable timestamp
+      finish_date: nullable  timestamp
+      created_date: nullable timestamp
+      created_by: nullable timestamp
+      last_modified_date: nullable timestamp
+      modified_by: nullable timestamp
+      deleted_at: nullable  timestamp
+    Profile:
+      id: id 
+      name: string:255
+      multiple_school: enum:Yes,No
+      created_date: nullable timestamp
+      created_by: nullable timestamp
+      last_modified_date: nullable timestamp
+      modified_by: nullable timestamp
+      deleted_at: nullable timestamp
