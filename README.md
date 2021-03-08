@@ -28,5 +28,5 @@ php artisan backpack:build
 
 Additional edits made to fix problems
 App\Models\User.php
-- added use Backpack\CRUD\app\Models\Traits\CrudTrait; to line 9
+- added "use Backpack\CRUD\app\Models\Traits\CrudTrait;" to line 9
 - added "CrudTrait"; to the end of line 13 to become "use HasFactory, Notifiable,CrudTrait;"
