@@ -11,6 +11,7 @@ php artisan backpack:install
 composer require --dev laravel-shift/blueprint
 
 [note for laravel 8, blueprint requires] ... https://blueprint.laravelshift.com/docs/advanced-configuration/
+
 php artisan vendor:publish --tag=blueprint-config 
 - changed generate_fqcn_route --> true
 - changed models_namespace --> Models
