@@ -1,6 +1,8 @@
 composer create-project laravel/laravel sms "8.0.*" --prefer-dist
 - created DB 'SMS
 
+change env to reflect appropriate DB
+
 composer require backpack/crud:"4.1.*"
 
 php artisan backpack:install
