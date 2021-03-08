@@ -1,4 +1,4 @@
-composer create-project laravel/laravel bpack "8.0.*" --prefer-dist
+composer create-project laravel/laravel sms "8.0.*" --prefer-dist
 - created DB 'SMS
 
 composer require backpack/crud:"4.1.*"
