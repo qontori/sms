@@ -23,6 +23,7 @@ php artisan blueprint:build
 php artisan migrate
 
 composer require --dev backpack/generators
+
 php artisan backpack:build
 
 Additional edits made to fix problems
