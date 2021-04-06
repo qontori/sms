@@ -30,3 +30,32 @@ Additional edits made to fix problems
 App\Models\User.php
 - added "use Backpack\CRUD\app\Models\Traits\CrudTrait;" to line 9
 - added "CrudTrait"; to the end of line 13 to become "use HasFactory, Notifiable,CrudTrait;"
+
+
+---------------- add backpack permission manager
+
+Permisson Manager
+- composer require backpack/permissionmanager
+- php artisan vendor:publish --provider="Spatie\Permission\PermissionServiceProvider" --tag="migrations"
+- php artisan migrate
+- php artisan vendor:publish --provider="Spatie\Permission\PermissionServiceProvider" --tag="config"
+
+>>>>> add to user.php model
+use Backpack\CRUD\app\Models\Traits\CrudTrait; // <------------------------------- this one
+use Spatie\Permission\Traits\HasRoles;// <---------------------- and this one
+
+class User extends Authenticatable
+{
+    use CrudTrait; // <----- this
+    use HasRoles; // <------ and thi
+>>>>>>
+
+php artisan vendor:publish --provider="Backpack\PermissionManager\PermissionManagerServiceProvider"
+
+config/backpack/base.php
+ // The guard that protects the Backpack admin panel.
+    // If null, the config.auth.defaults.guard value will be used.
+-   'guard' => 'backpack',
++   'guard' => null,
+
+
